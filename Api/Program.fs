@@ -14,7 +14,7 @@ open Giraffe
 // Web app
 // ---------------------------------
 module Graphs = 
-    open LinkGraph
+    open Lib
     let listHandler url : HttpHandler =
         fun next ctx ->
             ctx.SetStatusCode(200)

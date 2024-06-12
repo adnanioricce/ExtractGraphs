@@ -1,4 +1,4 @@
-namespace LinkGraph
+namespace Lib
 
 open System
 open System.Text.RegularExpressions
@@ -66,7 +66,10 @@ module Extracter =
         |> Parser.extractLinks
         |> Seq.filter (fun url -> url.StartsWith("http"))
     }
-
+    // let rec extractGraphs (url:string) (fetchHtml: string -> Async<string>) : Async<Graph<string>> = async {
+    //     let! graph = createLinkGraph url fetchHtml
+        
+    // }
     let serializeGraphToJson (graph: Graph<'T>) : string =
         let serializableGraph = graph.ToSerializable()
         JsonConvert.SerializeObject(serializableGraph, Formatting.Indented)
