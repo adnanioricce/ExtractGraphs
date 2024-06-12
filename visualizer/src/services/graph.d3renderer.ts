@@ -12,14 +12,14 @@ export function DefaultGraphRenderer(args:IGraphRendererArgs) {
     const { graphContainer } = args
     const createGraph = (data: GraphData) => {                
         const width = screen.availWidth;
-        const height = screen.availWidth;
+        const height = screen.availHeight;
         
         const svg = d3.select(graphContainer.value)
         .append('svg')
         .attr('width', width)
         .attr('height', height);
 
-        const nodes = Object.keys(data).map((id,index) => ({ id}));
+        const nodes = Object.keys(data).map((id) => ({ id}));
         const links = Object.entries(data).flatMap(([source, targets]) =>
             targets.map(target => ({ source, target}))
         );        
