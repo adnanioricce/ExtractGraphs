@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  queue:
+    image: rabbitmq:3
+    ports:
+      - 56774:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=graph
+      - RABBITMQ_DEFAULT_PASS=passwd
+  
